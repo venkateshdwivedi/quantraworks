@@ -1,785 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quantra Works — Fast, Mobile-First Websites for Landscapers &amp; Contractors</title>
-  <meta name="description" content="Quantra Works — fast, mobile-first websites for landscapers and contractors. Part of the Pinnakle Media team. See your new homepage before you pay anything.">
-  <link rel="canonical" href="https://quantraworks.com/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- Fontshare fonts: Bespoke Slab (Display) & Switzer (Body) -->
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=bespoke-slab@700,500,400&amp;f[]=switzer@400,500,600&amp;display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #121417;
-      --surface: #1A1E23;
-      --border: #262B32;
-      --text: #F2F3F5;
-      --muted: #8B9199;
-      --accent: #E8B931;
-      --font-display: 'Bespoke Slab', Georgia, serif;
-      --font-body: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --header-height: 64px;
-      --space-tight: 3rem;
-      --space-base: 5.5rem;
-      --space-open: 8rem;
-    }
-
-    @media (max-width: 767px) {
-      :root {
-        --space-tight: calc(3rem * 0.65);
-        --space-base: calc(5.5rem * 0.65);
-        --space-open: calc(8rem * 0.65);
-        --header-height: 58px;
-      }
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
-    }
-
-    @media (max-width: 360px) {
-      .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-    }
-
-    /* Header */
-    .site-header {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-      min-height: var(--header-height);
-      display: flex;
-      align-items: center;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.125rem;
-      letter-spacing: -0.01em;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .brand-affiliation {
-      font-size: 0.875rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .brand-affiliation:hover {
-      color: var(--text);
-    }
-
-    /* Sections */
-    section {
-      border-bottom: 1px solid var(--border);
-    }
-
-    #rebuild {
-      padding: var(--space-base) 0;
-    }
-
-    #concepts {
-      padding: var(--space-open) 0;
-    }
-
-    #team {
-      padding: var(--space-open) 0;
-    }
-
-    .contact-section {
-      padding: var(--space-tight) 0;
-      border-bottom: none;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.75rem;
-      line-height: 1.25;
-      letter-spacing: -0.015em;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-sub {
-      font-size: 1.0625rem;
-      color: var(--muted);
-      line-height: 1.5;
-      max-width: 620px;
-      margin-bottom: 2.5rem;
-    }
-
-    /* Hero */
-    .hero-section {
-      text-align: left;
-      padding: var(--space-open) 0;
-    }
-
-    @media (max-width: 767px) {
-      .hero-section {
-        min-height: calc(100svh - 70px - var(--space-base) - var(--header-height));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: var(--space-tight);
-        padding-bottom: var(--space-tight);
-      }
-    }
-
-    .hero-headline {
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      max-width: 720px;
-    }
-
-    @media (min-width: 390px) {
-      .hero-headline {
-        font-size: clamp(2.25rem, 6.5vw, 3.25rem);
-      }
-    }
-
-    .underline-target {
-      position: relative;
-      display: inline-block;
-    }
-
-    .drawn-stroke {
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 100%;
-      height: 12px;
-      pointer-events: none;
-      overflow: visible;
-    }
-
-    .drawn-stroke path {
-      stroke-dasharray: var(--stroke-len, 242);
-      stroke-dashoffset: var(--stroke-len, 242);
-      animation: drawUnderline 600ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
-    }
-
-    @keyframes drawUnderline {
-      from {
-        stroke-dashoffset: var(--stroke-len, 242);
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .drawn-stroke path {
-        animation: none;
-        stroke-dashoffset: 0;
-      }
-    }
-
-    .hero-sub {
-      font-size: 1.125rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .hero-reassurance {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-      line-height: 1.4;
-    }
-
-    .btn-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--accent);
-      color: #121417;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 1.0625rem;
-      padding: 0.9375rem 1.625rem;
-      border-radius: 4px;
-      text-decoration: none;
-      border: 1px solid var(--accent);
-      cursor: pointer;
-      transition: background-color 150ms ease, border-color 150ms ease;
-    }
-
-    .btn-cta:hover {
-      background-color: #d6a826;
-      border-color: #d6a826;
-    }
-
-    /* 7-Day Rebuild */
-    .rebuild-list {
-      list-style: none;
-      margin-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .rebuild-row {
-      display: grid;
-      grid-template-columns: 2.75rem 1fr;
-      gap: 1rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-      align-items: baseline;
-    }
-
-    .row-index {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: var(--muted);
-      letter-spacing: -0.01em;
-    }
-
-    .rebuild-row:nth-child(-n+3) .row-text {
-      font-size: 1.25rem;
-      color: var(--text);
-      font-weight: 500;
-      line-height: 1.45;
-    }
-
-    .rebuild-row:nth-child(n+4) .row-text {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 400;
-      line-height: 1.5;
-    }
-
-    /* Concepts Section */
-    .concepts-grid {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-base);
-      margin-top: 2rem;
-    }
-
-    .concept-card {
-      position: relative;
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .concept-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background-color: rgba(18, 20, 23, 0.9);
-      color: var(--text);
-      border: 1px solid var(--border);
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 0.3125rem 0.625rem;
-      border-radius: 2px;
-      z-index: 2;
-    }
-
-    .concept-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background-color: var(--surface);
-      overflow: hidden;
-    }
-
-    .concept-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .concept-info {
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .concept-name {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: var(--text);
-    }
-
-    .concept-meta {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    .concept-link {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .concept-link:hover {
-      color: var(--accent);
-    }
-
-    /* Team Section */
-    .team-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 1.75rem;
-    }
-
-    .team-profile {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 640px) {
-      .team-profile {
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 2.25rem;
-        align-items: start;
-      }
-    }
-
-    .team-photo-wrap {
-      width: 160px;
-      aspect-ratio: 3 / 4;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background-color: var(--surface);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .team-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .team-bio {
-      font-size: 1.0625rem;
-      line-height: 1.6;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .team-agency-link {
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    .team-agency-link a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .team-agency-link a:hover {
-      color: var(--accent);
-    }
-
-    .team-projects {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .team-projects-heading {
-      font-family: var(--font-display);
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .team-projects-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 640px) {
-      .team-projects-list {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .team-project-item {
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1rem;
-      font-size: 0.9375rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .team-project-item .slot-title {
-      display: block;
-      color: var(--text);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      padding: 3.5rem 0 4.5rem 0;
-      border-bottom: none;
-    }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-      max-width: 540px;
-    }
-
-    .contact-line {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .contact-label {
-      font-size: 0.8125rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .contact-val {
-      font-size: 1.0625rem;
-      color: var(--text);
-    }
-
-    .contact-val a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .contact-val a:hover {
-      color: var(--accent);
-    }
-
-    .contact-address {
-      font-style: normal;
-      font-size: 1.0625rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    /* Footer */
-    .site-footer {
-      padding: 2rem 0;
-      border-top: 1px solid var(--border);
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    @media (min-width: 640px) {
-      .footer-inner {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantra Works: websites for landscapers and tradies</title>
+<meta name="description" content="Fast, mobile-first websites for landscapers, pavers, roofers and tradies in Australia and the US. See your new homepage free before you pay anything. Live in 7 days.">
+<meta property="og:title" content="Quantra Works: websites that make the phone ring">
+<meta property="og:description" content="Fast, mobile-first websites for landscapers and tradies. See your new homepage free before you pay anything.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quantraworks.com/">
+<meta name="theme-color" content="#0F241D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F241D'/%3E%3Crect x='13' y='13' width='17' height='17' rx='3' fill='%23E7E9E3'/%3E%3Crect x='34' y='13' width='17' height='17' rx='3' fill='%23E7E9E3'/%3E%3Crect x='13' y='34' width='17' height='17' rx='3' fill='%23E7E9E3'/%3E%3Crect x='34' y='34' width='17' height='17' rx='3' fill='%23FF6A2B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Public+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Quantra Works","url":"https://quantraworks.com/","email":"venkatesh@quantraworks.com","description":"Fast, mobile-first websites for landscapers and tradies in Australia and the US.","areaServed":["Australia","United States"],"address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressRegion":"Karnataka","addressCountry":"IN"},"parentOrganization":{"@type":"Organization","name":"Pinnakle Media","url":"https://pinnaklemedia.com"}}
+</script>
+<style>
+/* Concept: a website gets torn down and re-laid like pavers. Grid of tiles is the motif: hero field, logo, rebuild, stepping-stone path, footer. Hi-vis orange is only for actions and the one thing that matters in each moment. */
+:root{
+  --night:#0F241D;
+  --moss:#173A2F;
+  --concrete:#E7E9E3;
+  --slab:#F5F6F2;
+  --ink:#10261F;
+  --ink-soft:#4C5C55;
+  --line:#C8CEC5;
+  --hivis:#FF6A2B;
+  --turf:#3E9A55;
+  --flag:#C2381F;
+  --mist:#B6C6BF;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --max:1240px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--concrete);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--hivis);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:clamp(2.2rem,5.4vw,4.6rem);font-weight:850;font-stretch:112%;line-height:.98}
+h3{font-size:1.3rem;font-weight:750;font-stretch:106%;line-height:1.15}
+p{margin:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.lede{font-size:clamp(1.08rem,1.5vw,1.3rem);line-height:1.5;max-width:40ch}
+.measure{max-width:62ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:54px;padding:.85em 1.3em;border-radius:12px;font-family:var(--display);font-stretch:110%;font-weight:750;font-size:1.05rem;line-height:1.1;text-decoration:none;border:2px solid currentColor;cursor:pointer;will-change:transform}
+.btn-go{background:var(--hivis);border-color:var(--hivis);color:var(--ink)}
+.btn-go .ico{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--hivis);transition:transform .25s ease}
+.btn-go:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.btn-ghost{background:transparent;color:inherit}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* brand mark: 2x2 pavers */
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.tiles{display:grid;grid-template-columns:repeat(2,15px);gap:3px}
+.tiles i{width:15px;height:15px;border-radius:3px;background:currentColor;transition:transform .35s cubic-bezier(.2,.9,.3,1.4)}
+.tiles i:last-child{background:var(--hivis)}
+.mark:hover .tiles i:nth-child(1){transform:translate(-2px,-2px)}
+.mark:hover .tiles i:nth-child(2){transform:translate(2px,-2px)}
+.mark:hover .tiles i:nth-child(3){transform:translate(-2px,2px)}
+.mark:hover .tiles i:nth-child(4){transform:translate(2px,2px) rotate(12deg)}
+.mark b{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:1.15rem;letter-spacing:-.01em;display:block;line-height:1}
+.mark small{display:block;font-size:.76rem;opacity:.75;margin-top:3px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;color:#fff;transition:background-color .3s ease,color .3s ease,box-shadow .3s ease}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.nav.solid{background:rgba(231,233,227,.92);color:var(--ink);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(10px)}
+.nav nav{display:flex;align-items:center;gap:28px}
+.nav nav a.lnk{text-decoration:none;font-weight:600;font-size:.98rem;opacity:.85}
+.nav nav a.lnk:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.nav .btn{min-height:46px;padding:.55em 1em;font-size:.95rem}
+
+/* hero */
+.hero{position:relative;background:var(--night);color:#fff;min-height:min(100svh,940px);display:flex;align-items:flex-end;overflow:hidden;padding:120px 0 clamp(40px,6vw,72px)}
+#field{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,rgba(15,36,29,.9));pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end}
+.hero .h1{grid-column:1/-1}
+.h1{font-family:var(--display);font-weight:900;font-stretch:118%;font-size:clamp(2.9rem,7.4vw,7.6rem);line-height:.9;letter-spacing:-.03em;margin:0 0 8px}
+.h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.h1 .line>span{display:inline-block}
+.hero .lede{color:#cfdcd6;margin-bottom:30px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.promise{display:flex;gap:10px;align-items:center;margin-top:22px;color:#cfdcd6;font-size:1rem}
+.promise i{flex:none;width:10px;height:10px;border-radius:2px;background:var(--turf);box-shadow:0 0 0 4px rgba(62,154,85,.25)}
+
+/* the ringing phone card */
+.ring{justify-self:end;width:min(300px,100%);background:#fff;color:var(--ink);border-radius:22px;padding:18px;box-shadow:0 30px 70px -30px rgba(0,0,0,.6);transform-origin:50% 100%}
+.ring .top{display:flex;align-items:center;gap:12px}
+.ring .bell{position:relative;flex:none;width:46px;height:46px;border-radius:50%;background:var(--turf);display:grid;place-items:center;color:#fff}
+.ring .bell::before,.ring .bell::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--turf);opacity:0}
+.ring .caller b{display:block;font-family:var(--display);font-stretch:108%;font-size:1.05rem}
+.ring .caller span{font-size:.88rem;color:var(--ink-soft)}
+.ring .job{margin:14px 0;padding:12px 14px;border-radius:12px;background:var(--slab);font-size:.92rem;display:grid;gap:4px}
+.ring .job div{display:flex;justify-content:space-between;gap:10px}
+.ring .job span{color:var(--ink-soft)}
+.ring .job b{font-variant-numeric:tabular-nums}
+.ring .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ring .acts span{text-align:center;padding:10px;border-radius:10px;font-weight:700;font-size:.9rem}
+.ring .acts .no{background:#f1e4e1;color:var(--flag)}
+.ring .acts .yes{background:var(--turf);color:#fff}
+.ring small{display:block;text-align:center;margin-top:10px;font-size:.78rem;color:var(--ink-soft)}
+@media (prefers-reduced-motion:no-preference){
+  .ring.live{animation:buzz 4.8s ease-in-out infinite}
+  .ring.live .bell::before{animation:pulse 4.8s ease-out infinite}
+  .ring.live .bell::after{animation:pulse 4.8s ease-out .25s infinite}
+}
+@keyframes buzz{0%,8%,100%{transform:none}1%{transform:rotate(-2.5deg)}2%{transform:rotate(2.5deg)}3%{transform:rotate(-2deg)}4%{transform:rotate(2deg)}5%{transform:rotate(-1deg)}6%{transform:rotate(1deg)}}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}18%{transform:scale(2.1);opacity:0}100%{opacity:0}}
+
+/* marquee */
+.marquee{background:var(--hivis);color:var(--ink);overflow:hidden;border-block:2px solid var(--ink)}
+.marquee .track{display:flex;width:max-content;will-change:transform}
+.marquee .set{display:flex;align-items:center}
+.marquee span{font-family:var(--display);font-weight:850;font-stretch:120%;font-size:clamp(1.3rem,2.6vw,2.1rem);padding:16px 22px;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marquee span::after{content:"";width:14px;height:14px;border-radius:3px;background:var(--ink);transform:rotate(45deg)}
+
+/* rebuild story */
+.rebuild{position:relative;background:var(--concrete)}
+.rb{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center;padding-block:96px 48px}
+.rb h2{margin-bottom:26px}
+.steps-cap{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:c}
+.steps-cap li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line);color:var(--ink-soft);transition:color .3s ease}
+.steps-cap li::before{content:attr(data-n);font-family:var(--display);font-weight:900;font-stretch:125%;font-size:1.4rem;line-height:1;color:var(--line);transition:color .3s ease}
+.steps-cap b{display:block;color:inherit;font-size:1.05rem}
+.steps-cap span{font-size:.95rem}
+.steps-cap li.on{color:var(--ink)}
+.steps-cap li.on::before{color:var(--hivis)}
+.stage{justify-self:center;position:relative;width:min(340px,80vw)}
+.phone{position:relative;border-radius:44px;background:var(--ink);padding:12px;box-shadow:0 40px 80px -36px rgba(16,38,31,.6)}
+.scr{position:relative;border-radius:33px;overflow:hidden;aspect-ratio:9/18.6;background:#fff}
+.old,.new,.grid{position:absolute;inset:0}
+/* the old site */
+.old{background:#dfe6ee;font-family:"Times New Roman",Times,serif;color:#1b2a6b;padding-top:22px}
+.o-bar{background:linear-gradient(#5b7fb8,#2d4f8a);color:#fff;text-align:center;padding:11px 6px;font-size:13px;font-weight:bold}
+.o-nav{display:flex;justify-content:center;gap:6px;font-size:9px;padding:6px;background:#c9d3e0;text-decoration:underline;color:#0000c8}
+.o-wel{font-size:16px;color:#a0161b;font-weight:bold;margin:16px 0 8px;text-align:center}
+.o-txt{font-size:9px;line-height:1.35;color:#222;padding:0 16px}
+.o-broken{margin:14px auto;width:80%;height:96px;border:1px dashed #889;display:grid;place-items:center;font-size:9px;color:#667;background:#eef}
+.o-link{display:block;text-align:center;font-size:9px;color:#0000c8;text-decoration:underline}
+.o-foot{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-size:8px;color:#555}
+.flagdot{position:absolute;display:flex;align-items:center;gap:6px;font-family:var(--body);font-size:11px;font-weight:700;color:#fff;background:var(--flag);padding:5px 9px 5px 6px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(0,0,0,.4);white-space:nowrap}
+.flagdot::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.fd1{top:128px;right:10px}.fd2{top:236px;left:10px}.fd3{bottom:64px;right:12px}
+/* paver grid that appears between */
+.grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:1fr;gap:4px;padding:6px;background:#fff;opacity:0}
+.grid i{border-radius:5px;background:#e9ece6}
+/* the new site */
+.new{background:transparent;color:#10261F;font-family:var(--body);padding-top:22px}
+.n-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 14px}
+.n-nav b{font-family:var(--display);font-stretch:112%;font-weight:850;font-size:14px}
+.n-call{white-space:nowrap;background:var(--hivis);color:#10261F;font-weight:700;font-size:11.5px;padding:7px 11px;border-radius:999px}
+.n-shot{margin:4px 12px 0;height:160px;border-radius:16px;position:relative;overflow:hidden;background:linear-gradient(180deg,#9fc6d9 0 30%,#4f8a45 30% 68%,#c8b79a 68%)}
+.n-shot::after{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(90,70,40,.35) 22px 24px),repeating-linear-gradient(0deg,transparent 0 12px,rgba(90,70,40,.35) 12px 14px)}
+.n-shot i{position:absolute;bottom:28%;width:34px;height:46px;border-radius:50% 50% 8px 8px;background:#2f6b2f}
+.n-shot i:nth-child(1){left:16px}.n-shot i:nth-child(2){left:56px;height:58px;width:40px;background:#255a28}.n-shot i:nth-child(3){right:20px;height:52px}
+.n-h{font-family:var(--display);font-stretch:112%;font-weight:850;font-size:20px;line-height:1.05;padding:14px 14px 4px}
+.n-stars{padding:0 14px;font-size:11.5px;color:#3d5249}
+.n-stars em{font-style:normal;color:#e0a100;letter-spacing:1px}
+.n-cta{display:grid;gap:8px;padding:12px 14px}
+.n-cta span{display:block;text-align:center;padding:11px;border-radius:10px;font-weight:700;font-size:12.5px}
+.n-c1{background:var(--hivis);color:#10261F}
+.n-c2{border:1.5px solid #10261F}
+.n-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 14px}
+.n-tiles span{font-size:10px;font-weight:700;padding:30px 4px 7px;border-radius:9px;background:#eef3ec;text-align:center}
+.livebadge{position:absolute;top:-14px;right:-14px;z-index:3;background:var(--turf);color:#fff;font-family:var(--display);font-stretch:112%;font-weight:850;font-size:.95rem;padding:10px 14px;border-radius:12px;box-shadow:0 12px 30px -10px rgba(0,0,0,.4);display:flex;align-items:center;gap:8px}
+.livebadge::before{content:"";width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.3)}
+.stage-note{margin-top:14px;text-align:center;font-size:.85rem;color:var(--ink-soft)}
+
+/* statement */
+.statement{background:var(--night);color:#fff;padding:clamp(80px,12vw,160px) 0}
+.say{font-family:var(--display);font-weight:850;font-stretch:112%;font-size:clamp(2rem,5vw,4.4rem);line-height:1.04;letter-spacing:-.02em;max-width:18ch}
+.say .w{display:inline-block;white-space:pre}
+.inc{margin-top:clamp(48px,7vw,90px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden}
+.inc div{background:var(--night);padding:22px;display:grid;gap:8px;align-content:start}
+.inc b{font-family:var(--display);font-stretch:108%;font-weight:750;font-size:1.08rem}
+.inc span{color:var(--mist);font-size:.95rem;line-height:1.45}
+.inc .tile{width:22px;height:22px;border-radius:5px;background:var(--hivis)}
+.inc div:nth-child(2) .tile{background:#fff}
+.inc div:nth-child(3) .tile{background:var(--turf)}
+.inc div:nth-child(4) .tile{background:var(--mist)}
+.inc div:nth-child(5) .tile{background:var(--turf)}
+.inc div:nth-child(6) .tile{background:var(--hivis)}
+.inc div:nth-child(7) .tile{background:#fff}
+.inc div:nth-child(8) .tile{background:var(--mist)}
+
+/* self-check */
+.check{padding:clamp(72px,10vw,130px) 0}
+.check .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end;margin-bottom:44px}
+.check .head p{color:var(--ink-soft)}
+.check .body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(20px,3vw,40px);align-items:start}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.items label{position:relative;display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;height:100%;padding:18px;background:#fff;border:2px solid transparent;border-radius:16px;cursor:pointer;box-shadow:0 1px 0 var(--line);transition:border-color .2s ease,transform .2s ease}
+.items label:hover{transform:translateY(-2px)}
+.items input{appearance:none;-webkit-appearance:none;margin:0;width:26px;height:26px;border-radius:7px;border:2px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:background-color .2s ease,border-color .2s ease}
+.items input::after{content:"";width:12px;height:7px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg) translate(1px,-2px) scale(0);transition:transform .2s cubic-bezier(.2,.9,.3,1.5)}
+.items input:checked{background:var(--flag);border-color:var(--flag)}
+.items input:checked::after{transform:rotate(-45deg) translate(1px,-2px) scale(1)}
+.items label:has(input:checked){border-color:var(--flag)}
+.items b{display:block;font-weight:700;line-height:1.3}
+.items small{display:block;color:var(--ink-soft);font-size:.92rem;line-height:1.45;margin-top:4px}
+.score{position:sticky;top:100px;background:var(--night);color:#fff;border-radius:22px;padding:28px;display:grid;gap:18px}
+.gauge{position:relative;width:170px;height:170px}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg)}
+.gauge .trk{stroke:rgba(255,255,255,.12)}
+.gauge .val{stroke:var(--hivis);transition:stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1)}
+.gauge .n{position:absolute;inset:0;display:grid;place-items:center;text-align:center;line-height:1}
+.gauge .n b{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:3.6rem;font-variant-numeric:tabular-nums}
+.gauge .n span{display:block;font-size:.85rem;color:var(--mist);margin-top:4px}
+.score p{color:#e3ebe7}
+.score .btn{width:100%}
+.score .src{font-size:.8rem;color:var(--mist)}
+
+/* path */
+.path{background:var(--slab);padding:clamp(72px,10vw,130px) 0;border-block:1px solid var(--line);overflow:hidden}
+.path h2{margin-bottom:clamp(40px,6vw,72px)}
+.walk{position:relative}
+.walk svg.route{position:absolute;left:0;top:0;width:100%;height:120px;overflow:visible}
+.walk svg.route path{fill:none;stroke-width:3;stroke-linecap:round}
+.walk .ghost{stroke:var(--line);stroke-dasharray:2 10}
+.walk .draw{stroke:var(--hivis)}
+.stones{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;position:relative}
+.stones li{padding-top:150px;position:relative}
+.stone{position:absolute;top:var(--y,40px);left:0;width:64px;height:52px;border-radius:16px 20px 18px 14px;background:#fff;border:2px solid var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-stretch:125%;font-size:1.4rem;color:var(--line);transition:background-color .3s ease,color .3s ease,border-color .3s ease,transform .3s cubic-bezier(.2,.9,.3,1.4)}
+.stones li.on .stone{background:var(--ink);border-color:var(--ink);color:var(--hivis);transform:rotate(-4deg) scale(1.06)}
+.stones h3{margin-bottom:8px}
+.stones p{color:var(--ink-soft);font-size:1rem}
+.stones .when{display:inline-block;margin-top:12px;font-size:.85rem;font-weight:700;color:var(--turf)}
+
+/* work: horizontal */
+.work{background:var(--concrete);overflow:hidden}
+.work .pinbox{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:96px 56px}
+.work .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px}
+.work .head p{color:var(--ink-soft);max-width:38ch}
+.rail{display:flex;gap:28px;padding-inline:var(--gutter);will-change:transform}
+.card{flex:none;width:min(520px,78vw);text-decoration:none;color:var(--ink);display:grid;gap:16px}
+.card .frame{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;background:var(--fb);box-shadow:0 30px 60px -40px rgba(16,38,31,.6);transform-style:preserve-3d;transition:transform .2s ease}
+.card .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:1}
+.card .lab{position:absolute;top:14px;left:14px;z-index:2;background:#fff;color:var(--ink);font-size:.8rem;font-weight:700;padding:5px 9px;border-radius:7px}
+.card .fb{position:absolute;inset:18% 14% 0;background:#fff;border-radius:12px 12px 0 0;padding:16px;display:grid;align-content:start;gap:9px}
+.fb i{display:block;height:9px;border-radius:5px;background:#dde1da}
+.fb i.t{height:18px;width:78%;background:var(--fb)}
+.fb i.t2{height:18px;width:52%;background:var(--fb)}
+.fb i.s{width:88%}
+.fb i.b{height:26px;width:42%;border-radius:7px;background:var(--hivis);margin-top:6px}
+.fb i.g{height:54px;margin-top:6px;opacity:.35;background:linear-gradient(90deg,var(--fb) 0 31%,transparent 31% 34.5%,var(--fb) 34.5% 65.5%,transparent 65.5% 69%,var(--fb) 69%)}
+.card .meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.card .meta span{color:var(--ink-soft);font-size:.95rem}
+.card .meta u{font-weight:700;text-underline-offset:4px;white-space:nowrap}
+.card.end{width:min(380px,70vw);align-content:center;background:var(--night);color:#fff;border-radius:22px;padding:32px;aspect-ratio:auto}
+.card.end h3{font-size:1.8rem;font-stretch:115%;margin-bottom:12px}
+.card.end p{color:var(--mist);margin-bottom:20px}
+
+/* who */
+.who{padding:clamp(72px,10vw,130px) 0}
+.who .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.face{position:relative;width:clamp(150px,20vw,240px);aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:var(--moss)}
+.face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.face span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:4rem;color:var(--hivis)}
+.who .copy{display:grid;gap:18px}
+.who .copy p{color:var(--ink-soft);font-size:1.08rem}
+.who .copy p a{color:var(--ink);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:7px 13px;border-radius:999px;background:#fff;font-size:.92rem;box-shadow:0 1px 0 var(--line)}
+
+/* faq */
+.faq{padding:0 0 clamp(72px,10vw,130px)}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+.faq .side p{color:var(--ink-soft);margin-top:14px}
+.qa{border-top:2px solid var(--ink)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:22px 52px 22px 0;position:relative;font-family:var(--display);font-stretch:106%;font-weight:750;font-size:1.15rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";position:absolute;right:6px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:7px;background:var(--ink);transition:transform .3s cubic-bezier(.2,.9,.3,1.4),background-color .2s ease;
+  -webkit-mask:linear-gradient(#000 0 0) center/12px 2.5px no-repeat,linear-gradient(#000 0 0) center/2.5px 12px no-repeat;mask:linear-gradient(#000 0 0) center/12px 2.5px no-repeat,linear-gradient(#000 0 0) center/2.5px 12px no-repeat}
+.qa details[open] summary::after{transform:rotate(135deg);background:var(--hivis)}
+.qa .ans{overflow:hidden}
+.qa .ans p{padding:0 0 22px;color:var(--ink-soft);max-width:60ch}
+
+/* ask */
+.ask{position:relative;background:var(--night);color:#fff;padding:clamp(80px,11vw,150px) 0;overflow:hidden}
+.ask .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:start}
+.ask h2{font-size:clamp(2.6rem,6.4vw,5.8rem);margin-bottom:24px}
+.ask .lede{color:#cfdcd6}
+.ask ul{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:12px;color:#e2eae6}
+.ask ul li{display:flex;gap:12px;align-items:center}
+.ask ul li::before{content:"";flex:none;width:12px;height:12px;border-radius:3px;background:var(--hivis)}
+.alt{margin-top:26px;color:var(--mist);font-size:.98rem}
+.alt a{color:#fff;font-weight:700}
+form{position:relative;background:#fff;color:var(--ink);border-radius:24px;padding:clamp(22px,3vw,34px);display:grid;gap:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px}
+.field label{font-weight:700;font-size:.95rem}
+.field label small{font-weight:400;color:var(--ink-soft)}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--slab);border:2px solid transparent;border-radius:12px;padding:12px 14px;min-height:52px;transition:border-color .2s ease,background-color .2s ease}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+form .btn{width:100%;min-height:60px;font-size:1.12rem}
+.fine{font-size:.85rem;color:var(--ink-soft)}
+.status{display:none;padding:14px 16px;border-radius:12px;font-size:.98rem}
+.status.ok{display:block;background:#e3f2e6;color:#1d4a26}
+.status.err{display:block;background:#fbe9e5;color:#6d1d10}
+.status code{font-family:inherit;font-weight:700}
+.copybtn{margin-top:8px;background:none;border:1.5px solid currentColor;border-radius:8px;padding:6px 10px;font-size:.9rem;font-weight:700;color:inherit;cursor:pointer}
+.burst{position:absolute;width:12px;height:12px;border-radius:3px;pointer-events:none;z-index:5}
+
+/* footer */
+footer{background:var(--night);color:var(--mist);padding:0 0 32px;overflow:hidden}
+.giant{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(2.4rem,9.1vw,11.4rem);line-height:.82;letter-spacing:-.04em;color:#fff;white-space:nowrap;display:flex;gap:.2em;padding-top:20px}
+.giant span{display:inline-block}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);font-size:.92rem}
+.foot a{color:#fff;font-weight:700}
+
+/* mobile dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(15,36,29,.94);backdrop-filter:blur(8px);transform:translateY(110%);transition:transform .3s ease}
+.dock.on{transform:none}
+body.in-rb .dock{transform:translateY(110%)}
+.dock .btn{flex:1;min-height:50px;font-size:1rem;padding:.6em .8em}
+.dock .btn-ghost{color:#fff}
+
+/* custom cursor (mouse only) */
+.cur{position:fixed;left:0;top:0;z-index:60;pointer-events:none;display:none}
+.cur .dot{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:2px;background:var(--hivis)}
+.cur .ring2{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:12px;border:1.5px solid var(--hivis);display:grid;place-items:center;font-family:var(--display);font-stretch:110%;font-weight:800;font-size:.8rem;color:var(--ink);transition:width .25s ease,height .25s ease,margin .25s ease,background-color .25s ease,border-radius .25s ease}
+.cur .ring2 span{opacity:0;transition:opacity .2s ease}
+.cur.big .ring2{width:86px;height:86px;margin:-43px 0 0 -43px;background:var(--hivis);border-radius:22px}
+.cur.big .ring2 span{opacity:1}
+@media (hover:hover) and (pointer:fine){.cur{display:block}}
+
+@media (max-width:1000px){
+  .inc{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .nav nav a.lnk{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .ring{justify-self:start}
+  .rb{grid-template-columns:1fr;gap:28px;padding-block:88px 32px;min-height:auto}
+  .rb .txt{order:1}
+  .rb .stage{order:2}
+  .stage{width:min(236px,58vw)}
+  .n-nav b{font-size:12px}
+  .phone{border-radius:36px;padding:9px}
+  .scr{border-radius:28px}
+  .steps-cap li{padding:8px 0}
+  .steps-cap span{display:none}
+  .steps-cap li{display:none;border-top:0}
+  .steps-cap li.now{display:grid}
+  .rb h2{margin-bottom:10px}
+  .check .head,.check .body,.faq .wrap,.ask .wrap{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr}
+  .score{position:static}
+  .stones{grid-template-columns:1fr;gap:0;padding-left:86px}
+  .stones li{padding:0 0 36px}
+  .stone{top:0;left:-86px}
+  .walk svg.route{display:none}
+  .walk::before{content:"";position:absolute;left:31px;top:20px;bottom:40px;width:3px;background:repeating-linear-gradient(var(--line) 0 4px,transparent 4px 14px)}
+  .walk .vline{position:absolute;left:31px;top:20px;width:3px;height:0;background:var(--hivis)}
+  .who .wrap{grid-template-columns:1fr}
+  .work .head{flex-direction:column;align-items:start}
+  .work .pinbox{min-height:0;padding-block:72px 40px}
+  .rail{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;-webkit-overflow-scrolling:touch}
+  .card{scroll-snap-align:start}
+  .dock{display:flex}
+  footer{padding-bottom:100px}
+}
+@media (min-width:901px){.walk .vline{display:none}}
+@media (max-width:560px){
+  body{font-size:17px}
+  .inc{border-radius:14px}
+  .inc div{grid-template-columns:22px 1fr;column-gap:14px;row-gap:2px;padding:14px 16px}
+  .inc .tile{grid-row:span 2;margin-top:2px;width:18px;height:18px;border-radius:4px}
+  .inc span{font-size:.9rem}
+  .h1{font-size:clamp(2.5rem,13vw,3.5rem);font-stretch:100%}
+  .statement{padding:72px 0}
+  .ring{width:100%}
+  .row2{grid-template-columns:1fr}
+  .hero .actions .btn{width:100%}
+  .inc{grid-template-columns:1fr}
+  .nav .btn{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand" aria-label="Quantra Works homepage">Quantra Works</a>
-      <a href="https://pinnaklemedia.com" class="brand-affiliation" target="_blank" rel="noopener noreferrer">Part of Pinnakle Media</a>
-    </div>
-  </header>
+<div class="cur" aria-hidden="true"><div class="ring2"><span>Open</span></div><div class="dot"></div></div>
 
-  <main id="content">
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Quantra Works home">
+      <span class="tiles" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><b>Quantra Works</b><small>Part of the Pinnakle Media team</small></span>
+    </a>
+    <nav aria-label="Main">
+      <a class="lnk" href="#rebuild">The rebuild</a>
+      <a class="lnk" href="#how">How it works</a>
+      <a class="lnk" href="#work">Work</a>
+      <a class="lnk" href="#faq">Questions</a>
+      <a class="btn btn-go mag" href="#mockup">Get my free mockup</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <h1 class="hero-headline">
-          Your website should <span class="underline-target">get you called<svg class="drawn-stroke" viewBox="0 0 242 14" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M 0 9 C 60 4, 150 12, 242 7" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" /></svg></span>.
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h1 class="h1" id="hero-h">
+          <span class="line"><span>Your website</span></span>
+          <span class="line"><span>should make</span></span>
+          <span class="line"><span>the phone ring.</span></span>
         </h1>
-        <p class="hero-sub">
-          Quantra Works — fast, mobile-first websites for landscapers and contractors. Part of the Pinnakle Media team.
-        </p>
-        <div class="hero-actions">
-          <a href="https://calendly.com/quantraworks/15min" class="btn-cta" target="_blank" rel="noopener noreferrer">Book a 15-minute walkthrough</a>
-          <p class="hero-reassurance">You see your new homepage before you pay anything.</p>
+      <div>
+        <p class="lede">I build and rebuild websites for landscapers, pavers, roofers and trade businesses in Australia and the US. Fast on a phone, a big call button, your real job photos up front, and a quote form that lands in your inbox.</p>
+        <div class="actions">
+          <a class="btn btn-go mag" href="#mockup"><span class="ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Get my free homepage mockup</a>
+          <a class="btn btn-ghost mag" href="https://calendly.com/dwivedivenkatesh98/30min">Book a 15-minute call</a>
         </div>
+        <p class="promise"><i aria-hidden="true"></i>You see your new homepage before you pay anything.</p>
       </div>
-    </section>
+      <div class="ring" id="ringcard" aria-label="Example of a new quote request on a phone">
+        <div class="top">
+          <div class="bell" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></div>
+          <div class="caller"><b>New customer calling</b><span>Found you on Google</span></div>
+        </div>
+        <div class="job">
+          <div><span>Job</span><b>Paving quote</b></div>
+          <div><span>Area</span><b>40 m²</b></div>
+          <div><span>Suburb</span><b>Chermside</b></div>
+        </div>
+        <div class="acts"><span class="no">Decline</span><span class="yes">Answer</span></div>
+        <small>Example</small>
+      </div>
+    </div>
+  </section>
 
-    <!-- The 7-Day Website Rebuild Section -->
-    <section id="rebuild">
-      <div class="container">
-        <h2 class="section-title">The 7-Day Website Rebuild</h2>
-        <ol class="rebuild-list">
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">01</span>
-            <div class="row-text">Up to 5 pages: Home, Services, Projects, About, Contact / Get a Quote</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">02</span>
-            <div class="row-text">Built for phones first, with a big tap-to-call button at the top</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">03</span>
-            <div class="row-text">Loads fast on mobile — Google PageSpeed 80 or better</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">04</span>
-            <div class="row-text">Your real project photos and Google reviews on the homepage</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">05</span>
-            <div class="row-text">A simple quote form that sends straight to your email</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">06</span>
-            <div class="row-text">Page titles, service areas and a link to your Google Business Profile</div>
-          </li>
-          <li class="rebuild-row">
-            <span class="row-index" aria-hidden="true">07</span>
-            <div class="row-text">Hosting set up and connected to your domain</div>
-          </li>
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="mq">
+      <div class="set"><span>Landscapers</span><span>Pavers</span><span>Roofers</span><span>Fencers</span><span>Lawn care</span><span>Tree services</span><span>Concreters</span><span>Pool builders</span></div>
+      <div class="set"><span>Landscapers</span><span>Pavers</span><span>Roofers</span><span>Fencers</span><span>Lawn care</span><span>Tree services</span><span>Concreters</span><span>Pool builders</span></div>
+    </div>
+  </div>
+
+  <section class="rebuild" id="rebuild" aria-labelledby="rb-h">
+    <div class="wrap rb" id="rbpin">
+      <div class="txt">
+        <h2 id="rb-h">Watch a website get rebuilt</h2>
+        <ol class="steps-cap" id="caps">
+          <li class="on now" data-n="1"><div><b>The site most tradies have</b><span>Tiny text, broken images, no way to call.</span></div></li>
+          <li data-n="2"><div><b>Strip it back</b><span>Everything that doesn't win you a job goes.</span></div></li>
+          <li data-n="3"><div><b>Lay the foundation</b><span>A layout built for a thumb on a phone.</span></div></li>
+          <li data-n="4"><div><b>Put the call button first</b><span>Your number at the top, one tap away.</span></div></li>
+          <li data-n="5"><div><b>Add proof and go live</b><span>Real job photos, Google reviews, a quote form.</span></div></li>
         </ol>
       </div>
-    </section>
-
-    <!-- Concepts Section (Main Body) -->
-    <section id="concepts">
-      <div class="container">
-        <h2 class="section-title">Concept builds</h2>
-        <p class="section-sub">Sample sites built to show the approach. These are invented businesses, not clients.</p>
-        <div class="concepts-grid">
-          <div class="concept-card">
-            <span class="concept-badge">CONCEPT</span>
-            <div class="concept-frame">
-              <img src="concept-greenline.jpg" alt="Screenshot of Greenline Landscaping concept website" width="1280" height="800" loading="lazy">
+      <div class="stage">
+        <div class="phone">
+          <div class="scr">
+            <div class="old" id="old" aria-hidden="true">
+              <div class="o-bar o-p">RIDGEWAY GARDENS PTY LTD</div>
+              <div class="o-nav o-p"><span>Home</span><span>About Us</span><span>Services</span><span>Gallery</span><span>Contact</span></div>
+              <div class="o-wel o-p">Welcome to our Website!!</div>
+              <p class="o-txt o-p">Ridgeway Gardens has been providing quality landscaping services to the greater area for many years. We pride ourselves on customer service and attention to detail. Please browse our website to find out more about the services we offer including paving, turf, retaining walls and much more.</p>
+              <div class="o-broken o-p">[ image not found ]</div>
+              <span class="o-link o-p">Click here to contact us</span>
+              <div class="o-foot o-p">Copyright 2016 Ridgeway Gardens</div>
+              <span class="flagdot fd1">Tiny text</span>
+              <span class="flagdot fd2">Broken image</span>
+              <span class="flagdot fd3">No call button</span>
             </div>
-            <div class="concept-info">
-              <div>
-                <span class="concept-name">Greenline Landscaping</span>
-                <span class="concept-meta"> · Brisbane AU · Landscaping</span>
-              </div>
-              <a href="https://greenline-landscaping-ejt.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
-            </div>
-          </div>
-          <div class="concept-card">
-            <span class="concept-badge">CONCEPT</span>
-            <div class="concept-frame">
-              <img src="concept-coastal.jpg" alt="Screenshot of Coastal Pavers concept website" width="1280" height="800" loading="lazy">
-            </div>
-            <div class="concept-info">
-              <div>
-                <span class="concept-name">Coastal Pavers</span>
-                <span class="concept-meta"> · Tampa FL · Paving / Hardscaping</span>
-              </div>
-              <a href="https://coastal-pavers.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
-            </div>
-          </div>
-          <div class="concept-card">
-            <span class="concept-badge">CONCEPT</span>
-            <div class="concept-frame">
-              <img src="concept-summit.jpg" alt="Screenshot of Summit Roofing concept website" width="1280" height="800" loading="lazy">
-            </div>
-            <div class="concept-info">
-              <div>
-                <span class="concept-name">Summit Roofing</span>
-                <span class="concept-meta"> · Phoenix AZ · Roofing</span>
-              </div>
-              <a href="https://summit-roofing-3io.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
+            <div class="grid" id="pgrid" aria-hidden="true"></div>
+            <div class="new" id="new" aria-hidden="true">
+              <div class="n-nav n-a"><b>Ridgeway Gardens</b><span class="n-call">Call now</span></div>
+              <div class="n-shot n-b"><i></i><i></i><i></i></div>
+              <div class="n-h n-b">Gardens, paving and turf across Brisbane's north</div>
+              <div class="n-stars n-b"><em>★★★★★</em> 4.9 from 112 Google reviews</div>
+              <div class="n-cta"><span class="n-c1 n-a">Call 0400 123 456</span><span class="n-c2 n-b">Get a free quote in 24 hours</span></div>
+              <div class="n-tiles n-b"><span>Paving</span><span>Retaining walls</span><span>New turf</span></div>
             </div>
           </div>
         </div>
+        <div class="livebadge" id="live">Live</div>
+        <p class="stage-note">Example business, made up. Keep scrolling.</p>
       </div>
-    </section>
-
-    <!-- The Team Section -->
-    <section id="team">
-      <div class="container">
-        <h2 class="section-title">Who's doing the work</h2>
-        <div class="team-block">
-          <div class="team-profile">
-            <div class="team-photo-wrap">
-              <img src="venkatesh.jpg" alt="Photo of Venkatesh" width="160" height="213" loading="lazy">
-            </div>
-            <div class="team-details">
-              <p class="team-bio">
-                I'm Venkatesh. I build these myself, from Bengaluru, India. I'm part of the Pinnakle Media team — a four-year-old agency with 100+ clients, who also build websites. If you'd rather deal with a company, you can be invoiced through them.
-              </p>
-              <p class="team-agency-link">
-                Agency: <a href="https://pinnaklemedia.com" target="_blank" rel="noopener noreferrer">pinnaklemedia.com</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="team-projects">
-            <h3 class="team-projects-heading">Team website projects</h3>
-            <div class="team-projects-list">
-              <!-- I'm getting the links from Prateek -->
-              <div class="team-project-item">
-                <span class="slot-title">Pinnakle Client Site 1</span>
-                <span>Placeholder — link coming from Prateek</span>
-              </div>
-              <!-- I'm getting the links from Prateek -->
-              <div class="team-project-item">
-                <span class="slot-title">Pinnakle Client Site 2</span>
-                <span>Placeholder — link coming from Prateek</span>
-              </div>
-              <!-- I'm getting the links from Prateek -->
-              <div class="team-project-item">
-                <span class="slot-title">Pinnakle Client Site 3</span>
-                <span>Placeholder — link coming from Prateek</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-details">
-          <div class="contact-line">
-            <span class="contact-label">Email</span>
-            <div class="contact-val">
-              <a href="mailto:venkatesh@quantraworks.com">venkatesh@quantraworks.com</a>
-            </div>
-          </div>
-          <div class="contact-line">
-            <span class="contact-label">Walkthrough</span>
-            <div class="contact-val">
-              <a href="https://calendly.com/quantraworks/15min" target="_blank" rel="noopener noreferrer">Book a 15-minute walkthrough on Calendly</a>
-            </div>
-          </div>
-          <div class="contact-line">
-            <span class="contact-label">Location / Postal</span>
-            <div class="contact-val">
-              <address class="contact-address">
-                Quantra Works<br>
-                Bengaluru, Karnataka, India
-              </address>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>&copy; 2026 Quantra Works. Part of the Pinnakle Media team.</div>
-      <div>Fast, mobile-first websites for landscapers and contractors. &bull; Updated Nov 2026</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Set dasharray and starting dashoffset to the path's own length via getTotalLength
-    const underlinePath = document.querySelector('.drawn-stroke path');
-    if (underlinePath) {
-      const len = Math.ceil(underlinePath.getTotalLength()) || 242;
-      underlinePath.style.strokeDasharray = `${len}`;
-      underlinePath.style.setProperty('--stroke-len', `${len}`);
+  <section class="statement" aria-labelledby="say-h">
+    <div class="wrap">
+      <h2 class="sr" id="say-h">What every site includes</h2>
+      <p class="say" id="say">Fast on a phone. A call button at the top. Your real job photos. Reviews where people see them. A quote form that lands in your inbox. Live in 7 days.</p>
+      <div class="inc">
+        <div><i class="tile"></i><b>Up to 5 pages</b><span>Home, Services, Projects, About, and Contact / Get a Quote.</span></div>
+        <div><i class="tile"></i><b>Phone first</b><span>Designed for a thumb, with tap-to-call on every page.</span></div>
+        <div><i class="tile"></i><b>Fast to load</b><span>I aim for a Google PageSpeed mobile score of 80 or more.</span></div>
+        <div><i class="tile"></i><b>Your real work</b><span>Your job photos and Google reviews on the homepage.</span></div>
+        <div><i class="tile"></i><b>Quote form</b><span>Every request goes straight to your email.</span></div>
+        <div><i class="tile"></i><b>Found on Google</b><span>Page titles, service areas and a link to your Google Business Profile.</span></div>
+        <div><i class="tile"></i><b>Your domain</b><span>Hosting set up and connected. You own the site.</span></div>
+        <div><i class="tile"></i><b>One round of changes</b><span>You see a preview link before anything goes live.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="check" id="check" aria-labelledby="check-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="check-h">Check your own site in 60 seconds</h2>
+        <p class="lede">Open your website on your phone and tick anything that's true. These are the problems that quietly send customers to the next business on Google.</p>
+      </div>
+      <div class="body">
+        <ul class="items">
+          <li><label for="c1"><input type="checkbox" id="c1"><span><b>I have to zoom in to read it</b><small>Tiny text, or a layout built for desktop screens.</small></span></label></li>
+          <li><label for="c2"><input type="checkbox" id="c2"><span><b>No call button on the first screen</b><small>Customers shouldn't have to hunt for your number.</small></span></label></li>
+          <li><label for="c3"><input type="checkbox" id="c3"><span><b>It takes more than 3 seconds to load</b><small>Test it free on <a href="https://pagespeed.web.dev" target="_blank" rel="noopener">Google PageSpeed</a>. Under 50 on mobile is slow.</small></span></label></li>
+          <li><label for="c4"><input type="checkbox" id="c4"><span><b>The footer says 2021 or earlier</b><small>Or there are broken images and dead links.</small></span></label></li>
+          <li><label for="c5"><input type="checkbox" id="c5"><span><b>No photos of my own jobs</b><small>Stock photos, or no gallery at all.</small></span></label></li>
+          <li><label for="c6"><input type="checkbox" id="c6"><span><b>No simple quote form</b><small>Or it sends to an inbox nobody checks.</small></span></label></li>
+        </ul>
+        <aside class="score" aria-live="polite">
+          <div class="gauge">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="trk" cx="50" cy="50" r="42" fill="none" stroke-width="9"/><circle class="val" id="gval" cx="50" cy="50" r="42" fill="none" stroke-width="9" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg>
+            <div class="n"><div><b id="count">0</b><span>of 6 ticked</span></div></div>
+          </div>
+          <p id="verdict">Tick anything that's true for your site.</p>
+          <a class="btn btn-go mag" href="#mockup" id="score-cta">Show me the fixed version</a>
+          <p class="src">You're not alone: in a 2026 check of 235,000+ small business websites, 42% of landscaping sites scored below 80 out of 100 (<a href="https://leadsbylocation.pages.dev/report/website-quality/" target="_blank" rel="noopener" style="color:#fff">report</a>).</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="path" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h">From your old site to a ringing phone in four steps</h2>
+      <div class="walk" id="walk">
+        <svg class="route" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+          <path class="ghost" d="M30 66 C 160 10, 230 110, 290 70 S 450 20, 545 60 S 720 110, 800 56 S 930 30, 990 60"/>
+          <path class="draw" id="route" d="M30 66 C 160 10, 230 110, 290 70 S 450 20, 545 60 S 720 110, 800 56 S 930 30, 990 60"/>
+        </svg>
+        <span class="vline" id="vline" aria-hidden="true"></span>
+        <ol class="stones" id="stones">
+          <li style="--y:40px"><span class="stone" aria-hidden="true">1</span><h3>I mock up your homepage</h3><p>Using your real name, services, photos and reviews. Free, and you keep the ideas either way.</p><span class="when">Within 24 hours</span></li>
+          <li style="--y:46px"><span class="stone" aria-hidden="true">2</span><h3>We talk for 15 minutes</h3><p>A quick video call. You tell me what work you want more of, and I show you the mockup on a phone.</p><span class="when">When it suits you</span></li>
+          <li style="--y:34px"><span class="stone" aria-hidden="true">3</span><h3>I build the full site</h3><p>You get a preview link and one round of changes before anything goes live.</p><span class="when">7 days</span></li>
+          <li style="--y:28px"><span class="stone" aria-hidden="true">4</span><h3>Your phone rings</h3><p>Connected to your domain and tested on real phones. Customers find you, trust you and call.</p><span class="when">Day 7 onwards</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="work-h">
+    <div class="pinbox" id="workpin">
+      <div class="wrap head">
+        <h2 id="work-h">Sample sites</h2>
+        <p>Concept sites for made-up businesses, so you can see the standard before we talk. Open them on your phone.</p>
+      </div>
+      <div class="rail" id="rail">
+        <a class="card" data-cursor="Open" href="https://greenline-landscaping-ejt.pages.dev/" target="_blank" rel="noopener" style="--fb:#3f6f3a">
+          <div class="frame"><span class="lab">Concept</span><div class="fb" aria-hidden="true"><i class="t"></i><i class="t2"></i><i class="s"></i><i></i><i class="b"></i><i class="g"></i></div><img src="concept-greenline.jpg" alt="Homepage of the Greenline Landscaping concept site" loading="lazy" onerror="this.remove()"></div>
+          <div class="meta"><div><h3>Greenline Landscaping</h3><span>Landscaping, Brisbane AU</span></div><u>Open site</u></div>
+        </a>
+        <a class="card" data-cursor="Open" href="https://coastal-pavers.pages.dev/" target="_blank" rel="noopener" style="--fb:#3c6f86">
+          <div class="frame"><span class="lab">Concept</span><div class="fb" aria-hidden="true"><i class="t"></i><i class="t2"></i><i class="s"></i><i></i><i class="b"></i><i class="g"></i></div><img src="concept-coastal.jpg" alt="Homepage of the Coastal Pavers concept site" loading="lazy" onerror="this.remove()"></div>
+          <div class="meta"><div><h3>Coastal Pavers</h3><span>Paving and hardscaping, Tampa FL</span></div><u>Open site</u></div>
+        </a>
+        <a class="card" data-cursor="Open" href="https://summit-roofing-3io.pages.dev/" target="_blank" rel="noopener" style="--fb:#8a4a2c">
+          <div class="frame"><span class="lab">Concept</span><div class="fb" aria-hidden="true"><i class="t"></i><i class="t2"></i><i class="s"></i><i></i><i class="b"></i><i class="g"></i></div><img src="concept-summit.jpg" alt="Homepage of the Summit Roofing concept site" loading="lazy" onerror="this.remove()"></div>
+          <div class="meta"><div><h3>Summit Roofing</h3><span>Roofing, Phoenix AZ</span></div><u>Open site</u></div>
+        </a>
+        <div class="card end">
+          <h3>Yours could be next</h3>
+          <p>Send me your website and I'll show you what it could look like, free.</p>
+          <a class="btn btn-go mag" href="#mockup">Get my free mockup</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <div class="face"><span aria-hidden="true">V</span><img src="venkatesh.jpg" alt="Venkatesh, who builds the sites" onerror="this.remove()"></div>
+      <div class="copy">
+        <h2 id="who-h">Who builds your site</h2>
+        <p class="measure">I'm Venkatesh. I build every site myself, from Bengaluru, India. I'm part of the team at <a href="https://pinnaklemedia.com" target="_blank" rel="noopener">Pinnakle Media</a>, a content and AI automation agency that works with clients in the US, UK and Canada.</p>
+        <p class="measure">You deal with me directly, from the mockup to launch day. If you'd rather be invoiced by a company, Pinnakle Media can invoice you.</p>
+        <div class="chips"><span>Calls on Google Meet</span><span>Your mornings or evenings</span><span>Reply within one working day</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="side"><h2 id="faq-h">Questions people ask</h2><p>Anything else, ask in the form below.</p></div>
+      <div class="qa">
+        <details><summary>Is the mockup really free?</summary><div class="ans"><p>Yes. I build your new homepage from what's already on your site and your Google profile. If you don't like it, you owe nothing, and you can keep the ideas.</p></div></details>
+        <details><summary>How much does it cost?</summary><div class="ans"><p>It depends on how many pages you need and what the site has to do. You'll get one fixed price on our call, after you've seen your mockup. No surprises after that.</p></div></details>
+        <details><summary>You use AI. Will it look like every other site?</summary><div class="ans"><p>AI writes the code, which is why it's fast. The design, words and layout are built around your real photos, reviews and services, and you see it before you pay.</p></div></details>
+        <details><summary>Do I own the website?</summary><div class="ans"><p>Yes. It's connected to your own domain, and you can take it anywhere.</p></div></details>
+        <details><summary>What do I need to give you?</summary><div class="ans"><p>Your logo if you have one, 10 to 20 photos of real jobs, your services and service areas, and access to your domain (or the name of whoever looks after it). I'll send a short form.</p></div></details>
+        <details><summary>What if I want changes?</summary><div class="ans"><p>You get a preview link before launch and one full round of changes. Small edits after launch are easy to arrange.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask" id="mockup" aria-labelledby="ask-h">
+    <div class="wrap">
+      <div>
+        <h2 id="ask-h">Get your free homepage mockup</h2>
+        <p class="lede">Send me your website. I'll mock up a new homepage and send it to you within 24 hours, with a 2-minute video walking through the changes.</p>
+        <ul>
+          <li>No payment details, no obligation</li>
+          <li>Made from your real business, not a template</li>
+          <li>I'll only use your email to send the mockup</li>
+        </ul>
+        <p class="alt">Rather talk first? <a href="https://calendly.com/dwivedivenkatesh98/30min">Book a 15-minute call</a>, or email venkatesh@quantraworks.com</p>
+      </div>
+      <form id="form" novalidate>
+        <div class="row2">
+          <div class="field"><label for="f-name">Your name</label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-biz">Business name</label><input type="text" id="f-biz" name="business" autocomplete="organization" required></div>
+        </div>
+        <div class="field"><label for="f-site">Your current website</label><input type="text" id="f-site" name="website" inputmode="url" placeholder="yourbusiness.com" required></div>
+        <div class="row2">
+          <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <small>(optional)</small></label><input type="tel" id="f-phone" name="phone" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-more">What kind of work do you want more of? <small>(optional)</small></label><textarea id="f-more" name="more_of" placeholder="For example: paving and retaining walls in the northern suburbs"></textarea></div>
+        <input type="text" name="_honey" id="f-honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="btn btn-go" type="submit" id="f-send">Send me my free mockup</button>
+        <div class="status" id="f-status" role="status"></div>
+        <p class="fine">I reply within one working day. Your details go only to me.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="giant" id="giant" aria-hidden="true"><span>Quantra</span><span>Works</span></div>
+    <div class="foot">
+      <span>© 2026 Quantra Works, Bengaluru, India. Part of the <a href="https://pinnaklemedia.com" target="_blank" rel="noopener">Pinnakle Media</a> team.</span>
+      <span>venkatesh@quantraworks.com</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-label="Quick actions">
+  <a class="btn btn-go" href="#mockup">Free mockup</a>
+  <a class="btn btn-ghost" href="https://calendly.com/dwivedivenkatesh98/30min">Book a call</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var hasG = !!window.gsap;
+  var q = function(s,r){return (r||document).querySelector(s);};
+  var qa = function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
+
+  /* ---------- paver field in the hero ---------- */
+  (function(){
+    var c = q('#field'), ctx = c.getContext('2d'), hero = q('.hero');
+    var W=0,H=0,dpr=1,size=54,gap=6,mx=-999,my=-999,lastMove=0,running=true,t0=performance.now(),ripples=[];
+    function resize(){ dpr=Math.min(window.devicePixelRatio||1,2); W=hero.clientWidth; H=hero.clientHeight; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); size = W<600?40:54; }
+    resize(); window.addEventListener('resize',resize);
+    hero.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; lastMove=performance.now();});
+    hero.addEventListener('pointerdown',function(e){var r=c.getBoundingClientRect(); ripples.push({x:e.clientX-r.left,y:e.clientY-r.top,t:performance.now()});});
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){running=es[0].isIntersecting; if(running) requestAnimationFrame(draw);}).observe(hero); }
+    function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+    function draw(now){
+      if(!running) return;
+      now = now||performance.now();
+      var t=(now-t0)/1000, px=mx, py=my;
+      if(now-lastMove>2500){ px = W*(.62+.25*Math.sin(t*.35)); py = H*(.45+.25*Math.sin(t*.53+1)); }
+      ctx.clearRect(0,0,W,H);
+      var step=size+gap, cols=Math.ceil(W/step)+1, rows=Math.ceil(H/step)+1, ox=(W%step)/2-step/2, oy=(H%step)/2-step/2;
+      ripples = ripples.filter(function(r){return now-r.t<1800;});
+      for(var j=0;j<rows;j++){ for(var i=0;i<cols;i++){
+        var x=ox+i*step + (j%2?step/2:0), y=oy+j*step, cx=x+size/2, cy=y+size/2;
+        var d=Math.hypot(cx-px,cy-py), lift=Math.max(0,1-d/260);
+        var rip=0; for(var k=0;k<ripples.length;k++){var rp=ripples[k], rad=(now-rp.t)*.7, dd=Math.abs(Math.hypot(cx-rp.x,cy-rp.y)-rad); rip=Math.max(rip,Math.max(0,1-dd/60)*(1-(now-rp.t)/1800));}
+        var a=Math.min(1,lift*lift+rip), s=size*(1-a*.12), off=(size-s)/2;
+        rr(x+off,y+off-a*6,s,s,8);
+        ctx.fillStyle = 'rgba(255,106,43,'+(a*.55).toFixed(3)+')';
+        if(a>.02) ctx.fill();
+        ctx.strokeStyle='rgba(231,233,227,'+(0.085+a*.4).toFixed(3)+')';
+        ctx.lineWidth=1; ctx.stroke();
+      }}
+      if(!reduce) requestAnimationFrame(draw);
     }
-  </script>
+    requestAnimationFrame(draw);
+  })();
+
+  /* ---------- build the paver grid inside the phone ---------- */
+  var pg=q('#pgrid'); for(var i=0;i<6*12;i++){pg.appendChild(document.createElement('i'));}
+
+  /* ---------- word split for the statement ---------- */
+  var say=q('#say'); var txt=say.textContent; say.setAttribute('aria-label',txt); say.innerHTML='';
+  txt.split(' ').forEach(function(w,ix,arr){var s=document.createElement('span'); s.className='w'; s.setAttribute('aria-hidden','true'); s.textContent=w+(ix<arr.length-1?' ':''); say.appendChild(s);});
+
+  /* ---------- nav colour ---------- */
+  var nav=q('#nav'), hero=q('.hero');
+  function navState(){ nav.classList.toggle('solid', hero.getBoundingClientRect().bottom < 80); }
+  window.addEventListener('scroll',navState,{passive:true}); navState();
+
+  /* ---------- dock on phones ---------- */
+  var dock=q('#dock');
+  if('IntersectionObserver' in window){
+    var seen={h:true,f:false};
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target.id==='mockup'?'f':'h']=e.isIntersecting;}); dock.classList.toggle('on',!seen.h&&!seen.f);});
+    io.observe(hero); io.observe(q('#mockup'));
+  }
+
+  /* ---------- FAQ: one open at a time, smooth ---------- */
+  qa('.qa details').forEach(function(d){
+    d.addEventListener('toggle',function(){
+      if(d.open){ qa('.qa details').forEach(function(o){ if(o!==d) o.open=false; });
+        if(hasG && !reduce) gsap.fromTo(q('.ans',d),{height:0},{height:'auto',duration:.45,ease:'power3.out'}); }
+    });
+  });
+
+  /* ---------- self-check ---------- */
+  var boxes=qa('.items input'), count=q('#count'), verdict=q('#verdict'), cta=q('#score-cta'), gval=q('#gval');
+  var lines=[["Tick anything that's true for your site.","Show me the fixed version"],["One problem is enough to lose calls from people on their phones. It's a quick fix in a rebuild.","Show me the fixed version"],["Two problems. Customers are likely calling the next business on the list.","Show me the fixed version"],["Your site is costing you calls. A rebuild fixes all of these at once.","Get my free mockup"]];
+  boxes.forEach(function(b){ b.addEventListener('change',function(){
+    var n=boxes.filter(function(x){return x.checked;}).length;
+    gval.style.strokeDashoffset = (263.9*(1-n/6)).toFixed(1);
+    if(hasG && !reduce){ var o={v:+count.textContent}; gsap.to(o,{v:n,duration:.4,ease:'power2.out',onUpdate:function(){count.textContent=Math.round(o.v);}}); gsap.fromTo(count,{scale:1.25},{scale:1,duration:.5,ease:'back.out(3)'}); }
+    else count.textContent=n;
+    var l=lines[Math.min(n,3)]; verdict.textContent=l[0]; cta.lastChild.nodeType===3 ? (cta.lastChild.textContent=l[1]) : (cta.textContent=l[1]);
+  }); });
+
+  /* ---------- form ---------- */
+  var formEl=q('#form'), status=q('#f-status'), send=q('#f-send'), INBOX='venkatesh@quantraworks.com';
+  function show(cls,html){status.className='status '+cls; status.innerHTML=html;}
+  function burst(){
+    if(!hasG || reduce) return;
+    var r=send.getBoundingClientRect(), fr=formEl.getBoundingClientRect(), cols=['#FF6A2B','#3E9A55','#10261F','#B6C6BF'];
+    for(var i=0;i<22;i++){ var b=document.createElement('i'); b.className='burst'; b.style.background=cols[i%4]; b.style.left=(r.left-fr.left+r.width/2)+'px'; b.style.top=(r.top-fr.top+r.height/2)+'px'; formEl.appendChild(b);
+      gsap.to(b,{x:(Math.random()-.5)*420,y:-(80+Math.random()*260),rotation:(Math.random()-.5)*540,opacity:0,duration:1.1+Math.random()*.5,ease:'power3.out',onComplete:(function(el){return function(){el.remove();};})(b)}); }
+  }
+  formEl.addEventListener('submit',function(e){
+    e.preventDefault();
+    var need=['f-name','f-biz','f-site','f-email'], missing=need.filter(function(id){return !document.getElementById(id).value.trim();});
+    var email=q('#f-email').value.trim();
+    if(missing.length){show('err','Please fill in your name, business name, website and email.'); document.getElementById(missing[0]).focus(); return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){show('err','That email address looks incomplete. Please check it.'); q('#f-email').focus(); return;}
+    if(q('#f-honey').value) return;
+    var data={}; new FormData(formEl).forEach(function(v,k){ if(k!=='_honey') data[k]=v; });
+    data._subject='Free mockup request: '+data.business; data._template='table'; data._captcha='false';
+    send.disabled=true; send.textContent='Sending...';
+    fetch('https://formsubmit.co/ajax/'+INBOX,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){ if(!r.ok) throw new Error('send failed'); return r.json(); })
+      .then(function(){ formEl.reset(); burst(); show('ok','<b>Got it, thanks.</b> I\'ll send your homepage mockup to '+email.replace(/</g,'')+' within 24 hours.'); send.textContent='Sent'; })
+      .catch(function(){
+        send.disabled=false; send.textContent='Send me my free mockup';
+        show('err','Your request didn\'t go through. Please email your website link to <code>'+INBOX+'</code> and I\'ll reply within one working day.<br><button type="button" class="copybtn" id="copy-email">Copy email address</button>');
+        var c=q('#copy-email'); c.addEventListener('click',function(){ try{ navigator.clipboard.writeText(INBOX).then(function(){c.textContent='Copied';},function(){c.textContent=INBOX;}); }catch(err){ c.textContent=INBOX; } });
+      });
+  });
+
+  /* ---------- ringing card ---------- */
+  var ringcard=q('#ringcard');
+
+  if(!hasG || reduce){
+    ringcard.classList.add('live');
+    q('#old').style.display='none';
+    qa('#caps li').forEach(function(li){li.classList.add('on');});
+    qa('#stones li').forEach(function(li){li.classList.add('on');});
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* smooth scroll */
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({lerp:.11,smoothWheel:true});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000);}); gsap.ticker.lagSmoothing(0);
+  }
+  qa('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length<2) return; var el=q(id); if(!el) return; e.preventDefault(); if(lenis) lenis.scrollTo(el,{offset:id==='#mockup'?0:-20,duration:1.4}); else el.scrollIntoView({behavior:'smooth'}); }); });
+
+  /* hero intro: one orchestrated moment */
+  var intro=gsap.timeline({defaults:{ease:'power4.out'}});
+  intro.from('.h1 .line>span',{yPercent:112,duration:1.05,stagger:.09})
+       .from('.hero .lede, .hero .actions, .promise',{y:24,opacity:0,duration:.8,stagger:.08},'-=.65')
+       .from('#ringcard',{y:60,rotation:6,opacity:0,duration:1,ease:'back.out(1.6)',onComplete:function(){ringcard.classList.add('live');}},'-=.6');
+
+  /* marquee driven by scroll direction and speed */
+  var mq=gsap.to('#mq',{xPercent:-50,ease:'none',duration:26,repeat:-1});
+  var dir=1;
+  ScrollTrigger.create({onUpdate:function(self){ var v=self.getVelocity(); dir=self.direction; gsap.to(mq,{timeScale:dir*Math.min(5,1+Math.abs(v)/350),duration:.25,overwrite:true}); gsap.to(mq,{timeScale:dir,duration:1.2,delay:.3}); }});
+
+  var mm=gsap.matchMedia();
+  mm.add({desk:'(min-width: 901px)', mob:'(max-width: 900px)'},function(ctx){
+    var desk=ctx.conditions.desk;
+
+    /* the rebuild, scrubbed by scroll */
+    var caps=qa('#caps li');
+    var tl=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:'#rebuild',start:desk?'top top':'top top+=40',end:desk?'+=320%':'+=260%',pin:'#rbpin',scrub:.7,anticipatePin:1,
+      onToggle:function(self){ document.body.classList.toggle('in-rb',self.isActive); },
+      onUpdate:function(self){ var s=Math.min(4,Math.floor(self.progress*5)); caps.forEach(function(li,ix){li.classList.toggle('on',ix<=s); li.classList.toggle('now',ix===s);}); }}});
+    gsap.set('#new .n-a, #new .n-b',{autoAlpha:0,y:40});
+    gsap.set('.flagdot',{scale:0,transformOrigin:'50% 50%'});
+    gsap.set('#live',{scale:0,rotation:-20});
+    tl.to('.flagdot',{scale:1,duration:.5,stagger:.25,ease:'back.out(3)'})
+      .to({}, {duration:.4})
+      .addLabel('strip')
+      .to('.flagdot',{scale:0,duration:.25},'strip')
+      .to('.o-p',{y:function(){return 260+Math.random()*260;},x:function(){return (Math.random()-.5)*120;},rotation:function(){return (Math.random()-.5)*50;},autoAlpha:0,duration:1,stagger:.08,ease:'power2.in'},'strip')
+      .to('#old',{autoAlpha:0,duration:.4},'strip+=.75')
+      .to('#pgrid',{opacity:1,duration:.3},'strip+=.6')
+      .addLabel('lay')
+      .from('#pgrid i',{scale:0,opacity:0,duration:.6,stagger:{each:.012,from:'center',grid:[12,6]},ease:'back.out(2)'},'lay')
+      .to({}, {duration:.3})
+      .addLabel('call')
+      .to('#pgrid',{opacity:.0,duration:.6},'call')
+      .to('#new .n-a',{autoAlpha:1,y:0,duration:.6,stagger:.15,ease:'back.out(1.8)'},'call')
+      .fromTo('.n-c1',{scale:1},{scale:1.06,yoyo:true,repeat:1,duration:.25},'call+=.7')
+      .addLabel('proof')
+      .to('#new .n-b',{autoAlpha:1,y:0,duration:.6,stagger:.12,ease:'power3.out'},'proof')
+      .to('#live',{scale:1,rotation:-4,duration:.5,ease:'back.out(3)'},'proof+=.7')
+      .to({}, {duration:.4});
+
+    /* statement: words light up as you read */
+    gsap.fromTo('#say .w',{opacity:.16},{opacity:1,stagger:.08,ease:'none',scrollTrigger:{trigger:'#say',start:'top 80%',end:'bottom 40%',scrub:true}});
+    gsap.from('.inc div',{y:40,opacity:0,duration:.7,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:'.inc',start:'top 85%'}});
+
+    /* stepping-stone path */
+    var stones=qa('#stones li');
+    if(desk){
+      var route=q('#route'), L=route.getTotalLength();
+      gsap.set(route,{strokeDasharray:L,strokeDashoffset:L});
+      gsap.to(route,{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'#walk',start:'top 75%',end:'bottom 55%',scrub:.5,
+        onUpdate:function(self){ stones.forEach(function(li,ix){ li.classList.toggle('on', self.progress >= ix/4 + .02); }); }}});
+    } else {
+      gsap.to('#vline',{height:function(){return q('#walk').offsetHeight-60;},ease:'none',scrollTrigger:{trigger:'#walk',start:'top 70%',end:'bottom 60%',scrub:.5,
+        onUpdate:function(self){ stones.forEach(function(li,ix){ li.classList.toggle('on', self.progress >= ix/4 + .02); }); }}});
+    }
+
+    /* work rail: horizontal on desktop */
+    if(desk){
+      var rail=q('#rail');
+      gsap.to(rail,{x:function(){return -(rail.scrollWidth-window.innerWidth+40);},ease:'none',scrollTrigger:{trigger:'#work',start:'top top',end:function(){return '+='+(rail.scrollWidth-window.innerWidth+40);},pin:'#workpin',scrub:.6,invalidateOnRefresh:true}});
+    }
+
+    /* footer wordmark rises */
+    gsap.from('#giant span',{yPercent:100,duration:1.1,stagger:.1,ease:'power4.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
+  });
+
+  /* ---------- mouse-only extras: cursor, magnetic buttons, card tilt ---------- */
+  if(fine){
+    var cur=q('.cur'), dot=q('.cur .dot'), ring2=q('.cur .ring2');
+    var xd=gsap.quickTo(dot,'x',{duration:.08}), yd=gsap.quickTo(dot,'y',{duration:.08}), xr=gsap.quickTo(ring2,'x',{duration:.35,ease:'power3'}), yr=gsap.quickTo(ring2,'y',{duration:.35,ease:'power3'});
+    window.addEventListener('pointermove',function(e){xd(e.clientX);yd(e.clientY);xr(e.clientX);yr(e.clientY);});
+    qa('[data-cursor]').forEach(function(el){ el.addEventListener('pointerenter',function(){cur.classList.add('big');}); el.addEventListener('pointerleave',function(){cur.classList.remove('big');}); });
+    qa('.mag').forEach(function(b){
+      b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect(); gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.22,y:(e.clientY-r.top-r.height/2)*.3,duration:.4,ease:'power3.out'});});
+      b.addEventListener('pointerleave',function(){gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'});});
+    });
+    qa('.card .frame').forEach(function(f){
+      f.addEventListener('pointermove',function(e){var r=f.getBoundingClientRect(), px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5; f.style.transform='perspective(900px) rotateY('+(px*8).toFixed(2)+'deg) rotateX('+(-py*8).toFixed(2)+'deg)';});
+      f.addEventListener('pointerleave',function(){f.style.transform='';});
+    });
+  }
+
+  window.addEventListener('load',function(){ScrollTrigger.refresh();});
+})();
+</script>
 </body>
 </html>
