@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantra Works — Fast, Mobile-First Websites for Landscapers &amp; Contractors</title>
+  <meta name="description" content="Quantra Works — fast, mobile-first websites for landscapers and contractors. Part of the Pinnakle Media team. See your new homepage before you pay anything.">
+  <link rel="canonical" href="https://quantraworks.com/">
+
+  <!-- Fontshare fonts: Bespoke Slab (Display) & Switzer (Body) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=bespoke-slab@700,500,400&amp;f[]=switzer@400,500,600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #121417;
+      --surface: #1A1E23;
+      --border: #262B32;
+      --text: #F2F3F5;
+      --muted: #8B9199;
+      --accent: #E8B931;
+      --font-display: 'Bespoke Slab', Georgia, serif;
+      --font-body: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --header-height: 64px;
+      --space-tight: 3rem;
+      --space-base: 5.5rem;
+      --space-open: 8rem;
+    }
+
+    @media (max-width: 767px) {
+      :root {
+        --space-tight: calc(3rem * 0.65);
+        --space-base: calc(5.5rem * 0.65);
+        --space-open: calc(8rem * 0.65);
+        --header-height: 58px;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    @media (max-width: 360px) {
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    /* Header */
+    .site-header {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-affiliation {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .brand-affiliation:hover {
+      color: var(--text);
+    }
+
+    /* Sections */
+    section {
+      border-bottom: 1px solid var(--border);
+    }
+
+    #rebuild {
+      padding: var(--space-base) 0;
+    }
+
+    #concepts {
+      padding: var(--space-open) 0;
+    }
+
+    #team {
+      padding: var(--space-open) 0;
+    }
+
+    .contact-section {
+      padding: var(--space-tight) 0;
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      font-size: 1.0625rem;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Hero */
+    .hero-section {
+      text-align: left;
+      padding: var(--space-open) 0;
+    }
+
+    @media (max-width: 767px) {
+      .hero-section {
+        min-height: calc(100svh - 70px - var(--space-base) - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: var(--space-tight);
+        padding-bottom: var(--space-tight);
+      }
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+    }
+
+    @media (min-width: 390px) {
+      .hero-headline {
+        font-size: clamp(2.25rem, 6.5vw, 3.25rem);
+      }
+    }
+
+    .underline-target {
+      position: relative;
+      display: inline-block;
+    }
+
+    .drawn-stroke {
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 12px;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .drawn-stroke path {
+      stroke-dasharray: var(--stroke-len, 242);
+      stroke-dashoffset: var(--stroke-len, 242);
+      animation: drawUnderline 600ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+    }
+
+    @keyframes drawUnderline {
+      from {
+        stroke-dashoffset: var(--stroke-len, 242);
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .drawn-stroke path {
+        animation: none;
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-reassurance {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--accent);
+      color: #121417;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.0625rem;
+      padding: 0.9375rem 1.625rem;
+      border-radius: 4px;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      transition: background-color 150ms ease, border-color 150ms ease;
+    }
+
+    .btn-cta:hover {
+      background-color: #d6a826;
+      border-color: #d6a826;
+    }
+
+    /* 7-Day Rebuild */
+    .rebuild-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .rebuild-row {
+      display: grid;
+      grid-template-columns: 2.75rem 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .row-index {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+    }
+
+    .rebuild-row:nth-child(-n+3) .row-text {
+      font-size: 1.25rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .rebuild-row:nth-child(n+4) .row-text {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Concepts Section */
+    .concepts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-base);
+      margin-top: 2rem;
+    }
+
+    .concept-card {
+      position: relative;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .concept-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background-color: rgba(18, 20, 23, 0.9);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.3125rem 0.625rem;
+      border-radius: 2px;
+      z-index: 2;
+    }
+
+    .concept-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: var(--surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .concept-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Team Section */
+    .team-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .team-profile {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .team-profile {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 2.25rem;
+        align-items: start;
+      }
+    }
+
+    .team-photo-wrap {
+      width: 160px;
+      aspect-ratio: 3 / 4;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background-color: var(--surface);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-bio {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .team-agency-link {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .team-agency-link a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .team-agency-link a:hover {
+      color: var(--accent);
+    }
+
+    .team-projects {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .team-projects-heading {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .team-projects-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .team-projects-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .team-project-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .team-project-item .slot-title {
+      display: block;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 3.5rem 0 4.5rem 0;
+      border-bottom: none;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      max-width: 540px;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .contact-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-val {
+      font-size: 1.0625rem;
+      color: var(--text);
+    }
+
+    .contact-val a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-val a:hover {
+      color: var(--accent);
+    }
+
+    .contact-address {
+      font-style: normal;
+      font-size: 1.0625rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Quantra Works homepage">Quantra Works</a>
+      <a href="https://pinnaklemedia.com" class="brand-affiliation" target="_blank" rel="noopener noreferrer">Part of Pinnakle Media</a>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-headline">
+          Your website should <span class="underline-target">get you called<svg class="drawn-stroke" viewBox="0 0 242 14" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M 0 9 C 60 4, 150 12, 242 7" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" /></svg></span>.
+        </h1>
+        <p class="hero-sub">
+          Quantra Works — fast, mobile-first websites for landscapers and contractors. Part of the Pinnakle Media team.
+        </p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/quantraworks/15min" class="btn-cta" target="_blank" rel="noopener noreferrer">Book a 15-minute walkthrough</a>
+          <p class="hero-reassurance">You see your new homepage before you pay anything.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 7-Day Website Rebuild Section -->
+    <section id="rebuild">
+      <div class="container">
+        <h2 class="section-title">The 7-Day Website Rebuild</h2>
+        <ol class="rebuild-list">
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">01</span>
+            <div class="row-text">Up to 5 pages: Home, Services, Projects, About, Contact / Get a Quote</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">02</span>
+            <div class="row-text">Built for phones first, with a big tap-to-call button at the top</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">03</span>
+            <div class="row-text">Loads fast on mobile — Google PageSpeed 80 or better</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">04</span>
+            <div class="row-text">Your real project photos and Google reviews on the homepage</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">05</span>
+            <div class="row-text">A simple quote form that sends straight to your email</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">06</span>
+            <div class="row-text">Page titles, service areas and a link to your Google Business Profile</div>
+          </li>
+          <li class="rebuild-row">
+            <span class="row-index" aria-hidden="true">07</span>
+            <div class="row-text">Hosting set up and connected to your domain</div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Concepts Section (Main Body) -->
+    <section id="concepts">
+      <div class="container">
+        <h2 class="section-title">Concept builds</h2>
+        <p class="section-sub">Sample sites built to show the approach. These are invented businesses, not clients.</p>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <span class="concept-badge">CONCEPT</span>
+            <div class="concept-frame">
+              <!-- I replace it Saturday -->
+              <img src="placeholder-concept-1.jpg" alt="Concept build 1 screenshot placeholder" width="800" height="500" loading="lazy">
+            </div>
+          </div>
+          <div class="concept-card">
+            <span class="concept-badge">CONCEPT</span>
+            <div class="concept-frame">
+              <!-- I replace it Saturday -->
+              <img src="placeholder-concept-2.jpg" alt="Concept build 2 screenshot placeholder" width="800" height="500" loading="lazy">
+            </div>
+          </div>
+          <div class="concept-card">
+            <span class="concept-badge">CONCEPT</span>
+            <div class="concept-frame">
+              <!-- I replace it Saturday -->
+              <img src="placeholder-concept-3.jpg" alt="Concept build 3 screenshot placeholder" width="800" height="500" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Team Section -->
+    <section id="team">
+      <div class="container">
+        <h2 class="section-title">Who's doing the work</h2>
+        <div class="team-block">
+          <div class="team-profile">
+            <div class="team-photo-wrap">
+              <img src="venkatesh.jpg" alt="Photo of Venkatesh" width="160" height="213" loading="lazy">
+            </div>
+            <div class="team-details">
+              <p class="team-bio">
+                I'm Venkatesh. I build these myself, from Bengaluru, India. I'm part of the Pinnakle Media team — a four-year-old agency with 100+ clients, who also build websites. If you'd rather deal with a company, you can be invoiced through them.
+              </p>
+              <p class="team-agency-link">
+                Agency: <a href="https://pinnaklemedia.com" target="_blank" rel="noopener noreferrer">pinnaklemedia.com</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="team-projects">
+            <h3 class="team-projects-heading">Team website projects</h3>
+            <div class="team-projects-list">
+              <!-- I'm getting the links from Prateek -->
+              <div class="team-project-item">
+                <span class="slot-title">Pinnakle Client Site 1</span>
+                <span>Placeholder — link coming from Prateek</span>
+              </div>
+              <!-- I'm getting the links from Prateek -->
+              <div class="team-project-item">
+                <span class="slot-title">Pinnakle Client Site 2</span>
+                <span>Placeholder — link coming from Prateek</span>
+              </div>
+              <!-- I'm getting the links from Prateek -->
+              <div class="team-project-item">
+                <span class="slot-title">Pinnakle Client Site 3</span>
+                <span>Placeholder — link coming from Prateek</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-details">
+          <div class="contact-line">
+            <span class="contact-label">Email</span>
+            <div class="contact-val">
+              <a href="mailto:venkatesh@quantraworks.com">venkatesh@quantraworks.com</a>
+            </div>
+          </div>
+          <div class="contact-line">
+            <span class="contact-label">Walkthrough</span>
+            <div class="contact-val">
+              <a href="https://calendly.com/quantraworks/15min" target="_blank" rel="noopener noreferrer">Book a 15-minute walkthrough on Calendly</a>
+            </div>
+          </div>
+          <div class="contact-line">
+            <span class="contact-label">Location / Postal</span>
+            <div class="contact-val">
+              <address class="contact-address">
+                Quantra Works<br>
+                Bengaluru, Karnataka, India
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>&copy; 2026 Quantra Works. Part of the Pinnakle Media team.</div>
+      <div>Fast, mobile-first websites for landscapers and contractors.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Set dasharray and starting dashoffset to the path's own length via getTotalLength
+    const underlinePath = document.querySelector('.drawn-stroke path');
+    if (underlinePath) {
+      const len = Math.ceil(underlinePath.getTotalLength()) || 242;
+      underlinePath.style.strokeDasharray = `${len}`;
+      underlinePath.style.setProperty('--stroke-len', `${len}`);
+    }
+  </script>
+</body>
+</html>
