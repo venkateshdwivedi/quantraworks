@@ -332,6 +332,8 @@
       border-radius: 4px;
       overflow: hidden;
       width: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .concept-badge {
@@ -355,9 +357,6 @@
       aspect-ratio: 16 / 10;
       background-color: var(--surface);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .concept-frame img {
@@ -365,6 +364,39 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .concept-info {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .concept-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text);
+    }
+
+    .concept-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .concept-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .concept-link:hover {
+      color: var(--accent);
     }
 
     /* Team Section */
@@ -617,22 +649,40 @@
           <div class="concept-card">
             <span class="concept-badge">CONCEPT</span>
             <div class="concept-frame">
-              <!-- I replace it Saturday -->
-              <img src="placeholder-concept-1.jpg" alt="Concept build 1 screenshot placeholder" width="800" height="500" loading="lazy">
+              <img src="concept-greenline.jpg" alt="Screenshot of Greenline Landscaping concept website" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="concept-info">
+              <div>
+                <span class="concept-name">Greenline Landscaping</span>
+                <span class="concept-meta"> · Brisbane AU · Landscaping</span>
+              </div>
+              <a href="https://greenline-landscaping-ejt.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
             </div>
           </div>
           <div class="concept-card">
             <span class="concept-badge">CONCEPT</span>
             <div class="concept-frame">
-              <!-- I replace it Saturday -->
-              <img src="placeholder-concept-2.jpg" alt="Concept build 2 screenshot placeholder" width="800" height="500" loading="lazy">
+              <img src="concept-coastal.jpg" alt="Screenshot of Coastal Pavers concept website" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="concept-info">
+              <div>
+                <span class="concept-name">Coastal Pavers</span>
+                <span class="concept-meta"> · Tampa FL · Paving / Hardscaping</span>
+              </div>
+              <a href="https://coastal-pavers.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
             </div>
           </div>
           <div class="concept-card">
             <span class="concept-badge">CONCEPT</span>
             <div class="concept-frame">
-              <!-- I replace it Saturday -->
-              <img src="placeholder-concept-3.jpg" alt="Concept build 3 screenshot placeholder" width="800" height="500" loading="lazy">
+              <img src="concept-summit.jpg" alt="Screenshot of Summit Roofing concept website" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="concept-info">
+              <div>
+                <span class="concept-name">Summit Roofing</span>
+                <span class="concept-meta"> · Phoenix AZ · Roofing</span>
+              </div>
+              <a href="https://summit-roofing-3io.pages.dev/" class="concept-link" target="_blank" rel="noopener noreferrer">View concept →</a>
             </div>
           </div>
         </div>
@@ -717,7 +767,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>&copy; 2026 Quantra Works. Part of the Pinnakle Media team.</div>
-      <div>Fast, mobile-first websites for landscapers and contractors.</div>
+      <div>Fast, mobile-first websites for landscapers and contractors. &bull; Updated Nov 2026</div>
     </div>
   </footer>
 
